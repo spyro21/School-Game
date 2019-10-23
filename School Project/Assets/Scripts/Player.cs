@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-
     [SerializeField] HealthBar hb;
-
+    [SerializeField] float healthNum = 5;
+    
     // Start is called before the first frame update
     void Start()
     {
-        hb.setSize(.4f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
