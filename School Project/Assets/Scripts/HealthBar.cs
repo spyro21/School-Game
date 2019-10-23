@@ -11,8 +11,8 @@ public class HealthBar : MonoBehaviour
     public float health = 0f;
     public bool isStress = false;
     public int isRunning = 1;
-    [SerializeField] public int WaitingTime;
-    [SerializeField] float healthUpdateRate = .00001f;
+    [SerializeField] public int WaitingTime = 1;
+    [SerializeField] float healthUpdateRate = .01f;
     [SerializeField] SceneLoader sceneload;
 
 
