@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class HealthBar : MonoBehaviour
 {
@@ -10,8 +12,8 @@ public class HealthBar : MonoBehaviour
     public bool isStress = false;
     public int isRunning = 1;
     [SerializeField] public int WaitingTime;
-    [SerializeField] float healthUpdateRate = .01f;
-
+    [SerializeField] float healthUpdateRate = .00001f;
+    [SerializeField] SceneLoader sceneload;
 
 
 
@@ -33,7 +35,11 @@ public class HealthBar : MonoBehaviour
         if (health >= 0) {
             isStress = true;
         }
-        
+
+        if (health >= 1) {
+            loadGameOver();
+        }
+
         
     }
 
@@ -50,4 +56,9 @@ public class HealthBar : MonoBehaviour
     public void setSize(float sizeNormalized) {
         bar.localScale = new Vector3(sizeNormalized,1f);
     }
+
+    public void loadGameOver() {
+        sceneload.LoadNextScene();
+    }
+    
 }
