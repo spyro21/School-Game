@@ -186,8 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167ac059c5b26cb4a8398306a4533eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkNoise: {fileID: 0}
-  NoiseSource: {fileID: 0}
   moveSpeed: 5
   rb: {fileID: 653352375}
 --- !u!114 &653352374
@@ -295,7 +293,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653352372}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c1c14b3753d4ee1408650ab5a626728d, type: 3}
@@ -391,7 +389,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653352372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58311ecd11a0fb447969ad94a88c7355, type: 3}
   m_Name: 
@@ -533,7 +531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2277ad1ca43e040bf8eb49f085469a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
 --- !u!4 &1095010660
 Transform:
   m_ObjectHideFlags: 0
