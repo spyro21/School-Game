@@ -793,6 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  healthbar: {fileID: 0}
 --- !u!61 &1928571544
 BoxCollider2D:
   m_ObjectHideFlags: 0

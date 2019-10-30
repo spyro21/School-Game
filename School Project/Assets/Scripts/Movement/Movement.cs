@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
+
     Vector2 movement;
     private void Start()
     {
@@ -24,6 +25,11 @@ public class Movement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         
     }
 
