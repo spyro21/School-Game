@@ -2,35 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Table of Contents:
+ * 1.EnemyFollow Class
+ *      a. Start()
+ *      b. OnCollisionEnter2D(Collider2D collision)
+ *      c. Update()
+ */
+
+
 public class EnemyFollow : MonoBehaviour
 {
 
+    
+    [SerializeField] HealthBar healthbar; //GameObject.HealthBar
+    [SerializeField] Collision2D collider; //this.BoxCollider2D
 
-    public float speed;
+    public float speed; // used in Update (c)
+    private Transform target; // used in Start (a) and Update (c)
 
-    private Transform target;
-    [SerializeField] HealthBar healthbar;
-    [SerializeField] Collision2D collider;
-
-
-    // Start is called before the first frame update
-    void Start()
+    
+    void Start() // starting frame
     {
-      
-
+        // initializes the variable target to a  GameObject with the tag "Player"
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision) // called when a GameObject enters boxcollider
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void Update() // once per frame
     {
+        // moves enemy towards the target objects position with a set speed
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        
     }
 }
