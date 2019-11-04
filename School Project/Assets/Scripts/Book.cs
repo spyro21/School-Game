@@ -8,11 +8,15 @@ using UnityEngine;
  *      a. OnTriggerEnter2D(Collider2D other)
  */
 
+
 public class Book : MonoBehaviour
 {
     [SerializeField] Transform t; // this.Transform component
+    [SerializeField] SpriteRenderer spriteR;
+    [SerializeField] Sprite timerImage;
 
     public int pointValue = 1; // number of points per collect
+   
 
     private void OnTriggerEnter2D(Collider2D other) // called when a GameObject enters boxcollider
     {
@@ -20,6 +24,8 @@ public class Book : MonoBehaviour
         { 
             // calls script to change the score by 'pointvalue'
             ScoreManager.instance.ChangeScore(pointValue);
+            
+            this.GetComponent<SpriteRenderer>().sprite = timerImage;
 
             // moves the book gameobject to a random location in the 2d space
             transform.position = new Vector3(Random.Range(-6.0f,6.0f),Random.Range(-4.0f,4.0f));
