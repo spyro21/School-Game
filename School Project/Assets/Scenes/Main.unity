@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 505261741}
+  spriteR: {fileID: 0}
+  timerImage: {fileID: 21300000, guid: e3d3c6b0cc5b17844b830310f070de1e, type: 3}
   pointValue: 1
 --- !u!1 &653352372
 GameObject:
