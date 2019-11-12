@@ -25,7 +25,7 @@ public class Book : MonoBehaviour
             // calls script to change the score by 'pointvalue'
             ScoreManager.instance.ChangeScore(pointValue);
             
-            //this.GetComponent<SpriteRenderer>().sprite = timerImage;
+            this.GetComponent<SpriteRenderer>().sprite = timerImage;
 
             // moves the book gameobject to a random location in the 2d space
             transform.position = new Vector3(Random.Range(-6.0f,6.0f),Random.Range(-4.0f,4.0f));
