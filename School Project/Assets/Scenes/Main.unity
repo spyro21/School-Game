@@ -315,9 +315,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f7cbaa26c85654eb96ba41fc41b14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 2076506836}
   t: {fileID: 505261741}
   spriteR: {fileID: 0}
-  timerImage: {fileID: 21300000, guid: e3d3c6b0cc5b17844b830310f070de1e, type: 3}
+  timerImage: {fileID: 21300000, guid: f6f2167aede69ae419fa382a473a19b8, type: 3}
+  hwImage: {fileID: 21300000, guid: a2e35549dc113a24e892f8b70be12227, type: 3}
+  healthBonusNum: 0.1
   pointValue: 1
 --- !u!1 &653352372
 GameObject:
@@ -1280,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0562b771faeda5b4ebfdc9746a3d4919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 2076506836}
   speed: 3
 --- !u!61 &1928571544
 BoxCollider2D:
@@ -1417,7 +1420,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitingTime: 1
-  healthUpdateRate: 0.05
   sceneload: {fileID: 1485318399}
   health: 0
   isStress: 0

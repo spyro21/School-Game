@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
 {
     
     [SerializeField] public int WaitingTime = 5; // time before healthbar increases
-    [SerializeField] float healthUpdateRate = .01f; // rate at which health will update;
+    public float healthUpdateRate = 0f; // rate at which health will update;
     [SerializeField] SceneLoader sceneload; // SceneLoader GameObject
 
     private Transform bar;
@@ -65,5 +65,13 @@ public class HealthBar : MonoBehaviour
     public void loadGameOver() {
         sceneload.LoadNextScene();
     }
-    
+
+    public void changeUpdateRate(float n) {
+        healthUpdateRate += n;
+    }
+
+    public void changeHealth(float n)
+    {
+        health = n;
+    }
 }

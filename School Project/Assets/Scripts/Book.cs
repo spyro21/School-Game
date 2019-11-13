@@ -11,29 +11,53 @@ using UnityEngine;
 
 public class Book : MonoBehaviour
 {
+    [SerializeField] GameObject health;
+    HealthBar healthBarScript;
+
     [SerializeField] Transform t; // this.Transform component
     [SerializeField] SpriteRenderer spriteR;
     [SerializeField] Sprite timerImage;
     [SerializeField] Sprite hwImage;
+    [SerializeField] float healthBonusNum = .1f;
 
 
+    bool isBook = true;
     public int pointValue = 1; // number of points per collect
-   
+
+    public void Start()
+    {
+        healthBarScript = health.GetComponent<HealthBar>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other) // called when a GameObject enters boxcollider
     {
         if (other.gameObject.CompareTag("Player")) // runs if collider has a tag of "Player"
-        { 
-            // calls script to change the score by 'pointvalue'
-            ScoreManager.instance.ChangeScore(pointValue);
+        {
+            if (isBook == true)
+            {
+                // calls script to change the score by 'pointvalue'
+                ScoreManager.instance.ChangeScore(pointValue);
+            }
+            else
+            {
+                changeHealth(); 
+            }
+
+           
+            
 
             if (Random.Range(0f, 1f) >= .5)
             {
                 this.GetComponent<SpriteRenderer>().sprite = timerImage;
+                isBook = false;
             }
             else {
                 this.GetComponent<SpriteRenderer>().sprite = hwImage;
+                isBook = true;
             }
+
+            
 
             
 
@@ -42,5 +66,17 @@ public class Book : MonoBehaviour
         }
 
 
+    }
+
+    public void changeHealth() {
+        if (healthBarScript.health > .3f)
+        {
+            healthBarScript.changeHealth(healthBarScript.health - healthBonusNum);
+        }
+        else
+        {
+            healthBarScript.changeHealth(0f);
+        }
+        
     }
 }
