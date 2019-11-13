@@ -14,6 +14,8 @@ public class Book : MonoBehaviour
     [SerializeField] Transform t; // this.Transform component
     [SerializeField] SpriteRenderer spriteR;
     [SerializeField] Sprite timerImage;
+    [SerializeField] Sprite hwImage;
+
 
     public int pointValue = 1; // number of points per collect
    
@@ -24,8 +26,16 @@ public class Book : MonoBehaviour
         { 
             // calls script to change the score by 'pointvalue'
             ScoreManager.instance.ChangeScore(pointValue);
+
+            if (Random.Range(0f, 1f) >= .5)
+            {
+                this.GetComponent<SpriteRenderer>().sprite = timerImage;
+            }
+            else {
+                this.GetComponent<SpriteRenderer>().sprite = hwImage;
+            }
+
             
-            this.GetComponent<SpriteRenderer>().sprite = timerImage;
 
             // moves the book gameobject to a random location in the 2d space
             transform.position = new Vector3(Random.Range(-6.0f,6.0f),Random.Range(-4.0f,4.0f));
