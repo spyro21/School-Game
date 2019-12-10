@@ -1420,6 +1420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitingTime: 1
+  healthUpdateRate: 0
   sceneload: {fileID: 1485318399}
   health: 0
   isStress: 0

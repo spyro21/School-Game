@@ -19,9 +19,10 @@ public class Book : MonoBehaviour
     [SerializeField] Sprite timerImage;
     [SerializeField] Sprite hwImage;
     [SerializeField] float healthBonusNum = .1f;
+    [SerializeField] bool isBook = true;
 
 
-    bool isBook = true;
+    
     public int pointValue = 1; // number of points per collect
 
     public void Start()
@@ -44,23 +45,17 @@ public class Book : MonoBehaviour
                 changeHealth(); 
             }
 
-           
-            
 
-            if (Random.Range(0f, 1f) >= .5)
+            if (isBook)
             {
-                this.GetComponent<SpriteRenderer>().sprite = timerImage;
-                isBook = false;
+                this.GetComponent<SpriteRenderer>().sprite = hwImage;
             }
             else {
-                this.GetComponent<SpriteRenderer>().sprite = hwImage;
-                isBook = true;
+                this.GetComponent<SpriteRenderer>().sprite = timerImage;
             }
 
-            
-
-            
-
+           
+           
             // moves the book gameobject to a random location in the 2d space
             transform.position = new Vector3(Random.Range(-6.0f,6.0f),Random.Range(-4.0f,4.0f));
         }
