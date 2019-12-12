@@ -213,7 +213,7 @@ MonoBehaviour:
   spriteR: {fileID: 0}
   timerImage: {fileID: 21300000, guid: f6f2167aede69ae419fa382a473a19b8, type: 3}
   hwImage: {fileID: 21300000, guid: a2e35549dc113a24e892f8b70be12227, type: 3}
-  healthBonusNum: 0.1
+  healthBonusNum: 0.2
   isBook: 0
   pointValue: 1
 --- !u!212 &48043834
