@@ -33,6 +33,7 @@ public class Book : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) // called when a GameObject enters boxcollider
     {
+
         if (other.gameObject.CompareTag("Player")) // runs if collider has a tag of "Player"
         {
             if (isBook == true)
@@ -72,6 +73,5 @@ public class Book : MonoBehaviour
         {
             healthBarScript.changeHealth(0f);
         }
-        
     }
 }
